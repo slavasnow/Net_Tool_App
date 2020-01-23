@@ -1,14 +1,15 @@
 import scan, os
 from progress.bar import IncrementalBar
 
-print("Введите имя хоста или его IP  ") #ввод имени хоста
-hostname = input()
-print("Введите кол-во отправляемых пакетов  ") #ввод имени хоста
-num = input() #кол-во проходов
+hostname = input("Введите имя хоста или его IP:  ")#ввод имени хоста
+
+num = input("Введите кол-во отправляемых пакетов:  ") #кол-во проходов
+
+
+
 
 scan.ping_system(hostname, num) # ping системы
 scan.ip_with_info_all(hostname) # все ip хоста
-
 
 #  Заменить ping прогресс баром для наиболее приятного вида.
 

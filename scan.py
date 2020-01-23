@@ -1,4 +1,4 @@
-import socket, os
+import socket, os, osfunc
 
 # Функция проверки портов
 
@@ -25,11 +25,14 @@ def ip_with_info_all(hostname):
 # функция ping и дополнительные условия
 
 def ping_system(hostname, num):
-    response = os.system ("ping -n "+ num + " " + hostname)
+    if os.name == "nt":
+        response = osfunc.nt_ping(num, hostname)
+    elif os.name == "posix":
+        response = osfunc.posix_ping(num, hostname)
+    
     if response == 0:
         print (hostname, ": host is up")
     else:
         print (hostname, ": host is down")
 
 # Функция 
-
