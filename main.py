@@ -1,5 +1,5 @@
 import scan, os
-from progress.bar import IncrementalBar
+#from progress.bar import IncrementalBar
 
 hostname = input("Введите имя хоста или его IP:  ")#ввод имени хоста
 
