@@ -1,40 +1,22 @@
 import scan, os
-#from progress.bar import IncrementalBar
-
-hostname = input("Введите имя хоста или его IP:  ")#ввод имени хоста
-
-num = input("Введите кол-во отправляемых пакетов:  ") #кол-во проходов
 
 
+while True:
+    hostname = input("Введите имя хоста или его IP:  ")#ввод имени хоста
 
 
-scan.ping_system(hostname, num) # ping системы
-scan.ip_with_info_all(hostname) # все ip хоста
+    # защита от неправильного ввода данных
+    while True:
+        num = input("Введите кол-во отправляемых пакетов:  ") #кол-во проходов
+        if not num.isdigit():
+            print("Вы должны ввести число, попробуйте снова.")
+        else:
+            break
 
-#  Заменить ping прогресс баром для наиболее приятного вида.
+    scan.ping_system(hostname, num) # ping системы
+    scan.ip_with_info_all(hostname) # все ip хоста
+    
+    qwe = input('Хотите продолжить работу(Y ,N)  ')#Выход из программы 
+    if qwe == 'N' or qwe == 'n':
+        break
 
-
-# Настрить cui и собрать систему для проведения тестов
-
-# Залить на git и создать новую ветку 
-
-
-
-# if os.name == "nt":
-#     #print(os.system("cls"))
-#     scan.ping_system(Hostname) # ping системы
-#     scan.ip_with_info_all(Hostname) # все ip хоста
-# else:
-#     #print(os.system("clear"))
-#     scan.ping_system(Hostname) # ping системы
-#     scan.ip_with_info_all(Hostname) # все ip хоста
-
-
-
-# scan.ping_system(Hostname) # ping системы
-
-# scan.ip_with_info_alllocal(Hostname) # все ip хоста
-
-
-# *for i in range(1000):
-#      scan.Scan_Port(Hostname, i)

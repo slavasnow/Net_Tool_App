@@ -1,3 +1,10 @@
+# -----------------------------------------------------------
+# Файл для объявления функций общего назначения.
+#
+#
+# -----------------------------------------------------------
+
+
 import socket, os, osfunc
 
 # Функция проверки портов
@@ -36,3 +43,12 @@ def ping_system(hostname, num):
         print (hostname, ": host is down")
 
 # Функция 
+
+# import pyping
+
+# response = pyping.ping('Your IP')
+
+# if response.ret_code == 0:
+#     print("reachable")
+# else:
+#     print("unreachable")
