@@ -14,9 +14,9 @@ import os
 
 def clean_monitor_system():
     if os.name == "nt":
-        print(os.system(" cls "))
+        os.system("cls")
     elif os.name == "posix":
-        print(os.system(" clear "))
+        os.system("clear")
     
 
 # ------------------------------------------------------------

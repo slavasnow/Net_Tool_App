@@ -15,7 +15,7 @@ def scan_port(hostname,port):
     Sock.settimeout(0.5)
     try:
         Connect = Sock.connect((ip, port))
-        print(" port : ",Port," its open.")
+        print(" port : ",port," its open.")
         Connect.close()
     except:
         pass
