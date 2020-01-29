@@ -15,7 +15,7 @@ def scan_port(hostname,port):
     Sock.settimeout(0.5)
     try:
         Connect = Sock.connect((ip, port))
-        print('port :',Port,' its open.')
+        print(" port : ",Port," its open.")
         Connect.close()
     except:
         pass
@@ -24,8 +24,8 @@ def scan_port(hostname,port):
 
 def ip_with_info_all(hostname):
     try:
-        print(socket.gethostbyname_ex(hostname))
-        print(socket.gethostbyaddr(hostname))
+        print(" IP адреса хоста : ", socket.gethostbyname_ex(hostname)[2])
+        print(" Имя хоста : ", socket.gethostbyaddr(hostname)[0])
     except:
         pass
 
@@ -41,14 +41,3 @@ def ping_system(hostname, num):
         print (hostname, ": host is up")
     else:
         print (hostname, ": host is down")
-
-# Функция 
-
-# import pyping
-
-# response = pyping.ping('Your IP')
-
-# if response.ret_code == 0:
-#     print("reachable")
-# else:
-#     print("unreachable")

@@ -10,15 +10,14 @@ import os
 # очитска экрана в системах
 # ------------------------------------------------------------
 
-# Очиста монитора в windows системах
+# Очиста монитора в системах
 
-def nt_clean_monitor(): 
-    print(os.system("cls"))
-
-# Очиста монитора в Linux системах
-
-def posix_clean_monitor():
-    print(os.system("clear"))
+def clean_monitor_system():
+    if os.name == "nt":
+        print(os.system(" cls "))
+    elif os.name == "posix":
+        print(os.system(" clear "))
+    
 
 # ------------------------------------------------------------
 # Вызов команды ping 
